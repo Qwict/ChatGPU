@@ -1,0 +1,24 @@
+name: Manually deploy 
+on: workflow_dispatch
+
+jobs:
+  build:
+    name: Manually deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Delete and clone repo
+      uses: appleboy/ssh-action@v0.1.7
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.WASE_DEPLOY }}
+        port: ${{ secrets.PORT }}
+        passphrase: ${{ secrets.PASSPHRASE }}
+        script: |
+          rm -rf /var/www/qwict/ChatGPU
+          cd /var/www/qwict
+          git clone https://github.com/Qwict/ChatGPU.git
+          cd /var/www/qwict/ChatGPU
+          npm install
+          tmux kill-session -t chatgpu
+          tmux new-session -d -s chatgpu 'npm start'

@@ -1,0 +1,27 @@
+name: Automatically deploy 
+on: 
+  push:
+    branches: 
+    - main
+    
+jobs:
+  build:
+    name: Automatically deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Pull repo
+      uses: appleboy/ssh-action@v0.1.7
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.QWICT_DEPLOY }}
+        passphrase: ${{ secrets.PASSPHRASE }}
+        port: ${{ secrets.PORT }}
+        script: |
+          rm -rf /var/www/qwict/ChatGPU
+          cd /var/www/qwict
+          git clone https://github.com/Qwict/ChatGPU.git
+          cd /var/www/qwict/ChatGPU
+          npm install
+          tmux kill-session -t chatgpu
+          tmux new-session -d -s chatgpu 'npm start'
