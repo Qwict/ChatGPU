@@ -1,9 +1,15 @@
+/* @font-face {
+    font-family: QwictRegular;
+    src: url(./fonts/QwictRegular.ttf);
+} */
+
 body {
     margin: 0px;
     height: 100%;
     overflow: hidden;
     background-color: #1f2027;
     overflow: hidden;
+    font-family: QwictRegular, 'Courier New';
 }
 
 .chat {
@@ -120,11 +126,6 @@ s .chatui-header {
     margin-right: auto;
 }
 
-.left-msg .msg-bubble {
-    background-color: #343541;
-    color: #ececec;
-}
-
 .error-msg .msg-bubble {
     background-color: #343541;
     color: #f15959;
@@ -138,6 +139,15 @@ s .chatui-header {
 .right-msg .msg-bubble {
     background-color: #444654;
     color: #ececec;
+    margin-left: 50%;
+    margin-right: 25%;
+}
+
+.left-msg .msg-bubble {
+    background-color: #343541;
+    color: #ececec;
+    margin-right: 50%;
+    margin-left: 25%;
 }
 
 .chatui-inputarea {
@@ -145,8 +155,8 @@ s .chatui-header {
     padding: 10px;
     border-top: 2px solid transparent;
     background-color: #1F2027;
-    margin-left: 30%;
-    margin-right: 30%;
+    margin-left: 25%;
+    margin-right: 25%;
 }
 
 .chatui-inputarea * {

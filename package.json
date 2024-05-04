@@ -1,6 +1,6 @@
 {
     "name": "chatgpu",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "private": true,
     "scripts": {
         "start": "cp src/gh-config.js src/app-config.js && parcel src/index.html  --port 8883",

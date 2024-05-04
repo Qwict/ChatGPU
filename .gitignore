@@ -2,3 +2,4 @@
 /lib
 /dist
 /.parcel-cache
+.DS_STORE
