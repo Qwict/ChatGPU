@@ -31,6 +31,34 @@ body {
     background-color: #1F2027;
 }
 
+.error-msg .msg-bubble {
+    background-color: #343541;
+    color: #f15959;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.init-msg .msg-bubble {
+    background-color: #343541;
+    color: #ececec;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.right-msg .msg-bubble {
+    background-color: #444654;
+    color: #ececec;
+    margin-left: 40%;
+    margin-right: 25%;
+}
+
+.left-msg .msg-bubble {
+    background-color: #343541;
+    color: #ececec;
+    margin-right: 40%;
+    margin-left: 25%;
+}
+
 .chatui-select-wrapper {
     display: flex;
     justify-content: center;
@@ -126,33 +154,9 @@ s .chatui-header {
     margin-right: auto;
 }
 
-.error-msg .msg-bubble {
-    background-color: #343541;
-    color: #f15959;
-}
-
-.init-msg .msg-bubble {
-    background-color: #343541;
-    color: #ececec;
-}
-
-.right-msg .msg-bubble {
-    background-color: #444654;
-    color: #ececec;
-    margin-left: 50%;
-    margin-right: 25%;
-}
-
-.left-msg .msg-bubble {
-    background-color: #343541;
-    color: #ececec;
-    margin-right: 50%;
-    margin-left: 25%;
-}
-
 .chatui-inputarea {
     display: flex;
-    padding: 10px;
+    padding-bottom: 20px;
     border-top: 2px solid transparent;
     background-color: #1F2027;
     margin-left: 25%;
