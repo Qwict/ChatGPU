@@ -23,5 +23,5 @@ jobs:
           git clone https://github.com/Qwict/ChatGPU.git
           cd /var/www/qwict/ChatGPU
           npm install
-          tmux kill-session -t chatgpu
-          tmux new-session -d -s chatgpu 'npm start'
+          pm2 delete ChatGPU
+          pm2 start "npm start" --name ChatGPU
